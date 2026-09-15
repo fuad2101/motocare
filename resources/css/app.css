@@ -22,6 +22,9 @@
     --color-zinc-800: #262626;
     --color-zinc-900: #171717;
     --color-zinc-950: #0a0a0a;
+    --color-motocare1: #FD6103 ;
+    --color-motocare2: #1E3A8A;
+    --color-motocare3: #60A5FA;
 
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
