@@ -11,5 +11,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::livewire('/test-binding', 'test-binding')->name('test-binding');
+Route::livewire('/booking', 'booking.create')->name('booking.create');
 
 require __DIR__.'/settings.php';

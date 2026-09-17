@@ -15,6 +15,15 @@
                     <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </flux:sidebar.item>
+                    <flux:sidebar.item icon="academic-cap" :href="route('booking.create')" :current="request()->routeIs('booking.create')" wire:navigate>
+                        {{ __('Booking') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="currency-dollar" :href="route('dashboard')" :current="request()->routeIs('payment.create')" wire:navigate>
+                        {{ __('Payment') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="lifebuoy" :href="route('dashboard')" :current="request()->routeIs('helpdesk.create')" wire:navigate>
+                        {{ __('Helpdesk') }}
+                    </flux:sidebar.item>
                 </flux:sidebar.group>
             </flux:sidebar.nav>
 
@@ -97,5 +106,6 @@
         @endpersist
 
         @fluxScripts
+        {{-- <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script> --}}
     </body>
 </html>
