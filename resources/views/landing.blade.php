@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name') }}</title>
     @vite('resources/css/app.css')
+    @wirekitStyles
+    @livewireStyles()
 </head>
 <body>
 <header class="bg-gray-100 text-white p-4 shadow-2xs">
@@ -103,66 +105,21 @@
 </section>
 {{-- End Testimonials Section --}}
 
-{{-- Pricing Section --}}
-<section class="pricing py-20">
-    <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-8">{{ __('Pricing Plans') }}</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="plan bg-white p-6 rounded shadow">
-                <h3 class="text-xl font-bold mb-2">Basic</h3>
-                <p class="mb-4">$0/month</p>
-                <ul class="mb-4">
-                    <li>Feature A</li>
-                    <li>Feature B</li>
-                </ul>
-                <a href="{{ route('register') }}" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600">Sign Up</a>
-            </div>
-            <div class="plan bg-white p-6 rounded shadow">
-                <h3 class="text-xl font-bold mb-2">Pro</h3>
-                <p class="mb-4">$9.99/month</p>
-                <ul class="mb-4">
-                    <li>Feature A</li>
-                    <li>Feature B</li>
-                    <li>Feature C</li>
-                </ul>
-                <a href="{{ route('register') }}" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600">Sign Up</a>
-            </div>
-            <div class="plan bg-white p-6 rounded shadow">
-                <h3 class="text-xl font-bold mb-2">Enterprise</h3>
-                <p class="mb-4">Contact us for pricing</p>
-                <ul class="mb-4">
-                    <li>All Pro features</li>
-                    <li>Dedicated support</li>
-                </ul>
-                <a href="#" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600">Contact Us</a>
-            </div>
-        </div>
-    </div>
-</section>
-{{-- End Pricing Section --}}
-
 {{-- FAQ Section  --}}
-<section class="faq bg-gray-100 py-20">
-    <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-8">{{ __('Frequently Asked Questions') }}</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="faq-item bg-white p-6 rounded shadow">
-                <h3 class="text-xl font-bold mb-2">{{ __('Question One?') }}</h3>
-                <p>{{ __('Answer to the first question goes here.') }}</p>
-            </div>
-            <div class="faq-item bg-white p-6 rounded shadow">
-                <h3 class="text-xl font-bold mb-2">{{ __('Question Two?') }}</h3>
-                <p>{{ __('Answer to the second question goes here.') }}</p>
-            </div>
-            <div class="faq-item bg-white p-6 rounded shadow">
-                <h3 class="text-xl font-bold mb-2">{{ __('Question Three?') }}</h3>
-                <p>{{ __('Answer to the third question goes here.') }}</p>
-            </div>
-            <div class="faq-item bg-white p-6 rounded shadow">
-                <h3 class="text-xl font-bold mb-2">{{ __('Question Four?') }}</h3>
-                <p>{{ __('Answer to the fourth question goes here.') }}</p>
-            </div>
-        </div>
+<section class="faq bg-blue-100 py-20">
+    <h2 class="text-center text-3xl text-primary font-bold mb-8">{{ __('Frequently Asked Questions') }}</h2>
+    <div class="container mx-auto text-center ">
+        <x-wirekit::container>
+            <x-wirekit::card class="w-full">
+                <x-wirekit::card.body>
+                    <x-wirekit::accordion variant="flush">
+                    <x-wirekit::accordion.item title="Bagaimana Cara Booking?" id="f-1">Klik Tombol hubungi kami untuk melakukan booking servis</x-wirekit::accordion.item>
+                    <x-wirekit::accordion.item title="Berapa lama proses servis" id="f-2">Lamanya servis tergantung dari beratnya kerusakan kendaraan</x-wirekit::accordion.item>
+                    <x-wirekit::accordion.item title="Apakah kendaraan saya aman?" id="f-3">Ya, kami menjamin keamanan kendaraan Anda selama proses servis.</x-wirekit::accordion.item>
+                    </x-wirekit::accordion>
+                </x-wirekit::card.body>
+            </x-wirekit::card>
+        </x-wirekit::container>
     </div>
 </section>
 {{-- End FAQ Section --}}
@@ -183,7 +140,8 @@
     </div>
 </section>
 {{-- End Footer Section --}}
-
+@wirekitScripts
+@livewireScripts()
 
 </body>
 </html>
